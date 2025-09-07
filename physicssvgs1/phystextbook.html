@@ -1,0 +1,112 @@
+<div id = "body">
+
+<button  onclick="backpage()" class="buttons">
+go back a page
+</button>
+
+<button onclick="newpage()" class="buttons">
+new page
+</button>
+
+<button onclick="smallerpage()" class="buttons">
+make page smaller
+</button>
+
+<button onclick="biggerpage()" class="buttons">
+make page bigger
+</button>
+
+<input type="text" id="pagenum" name="name" maxlength="3" size="10" placeholder="go to page" onkeydown="search()"/>
+
+
+<button  type="submit" onclick="window.open('https://drive.google.com/file/d/1i8gvJkynaABY8xJR_v9dL1LE5tgKnv7y/view?usp=sharing')" style="right: 0px; position: absolute;" >Download all SVG pages</button>
+
+<div id = "extras" style="top: 100px; left: 10px; position: absolute;" >
+<a style = "font-size: 40px;"><u>extras</u></a><br>
+<a href = "https://www.cgpbooks.co.uk/resources/gcse-science/video/sep-sci-physics-h">Video worked solutions</a><br>
+<a href = "https://www.cgpbooks.co.uk/resources/gcse-science/quiz/sep-sci-physics-h">Quiz</a><br>
+<a href = "https://www.cgpbooks.co.uk/resources/gcse-science/exam-tips/what-to-expect-sep-sci">What to expect in exams</a>
+</div>
+
+<img src = "0004.svg" id = "imgs" >
+</div>
+
+<style>
+#imgs{
+  position: absolute;
+  height:100%;
+  top: 10px;
+
+}
+</style>
+
+<script>
+var x = 4;
+var maxpages = 132;
+var size = 100;
+
+ function newpage() {
+            if(x<152){
+            x++
+            }
+            if (x<10){
+            zeros = "000";
+            }else if(x<100){
+            zeros = "00"
+            }else{
+            zeros = "0"
+            }
+            
+            document.getElementById("imgs").src= zeros + x + '.svg';
+            
+            console.log(img.src);
+            return x
+}
+ function backpage() {
+            if(x>4){
+            x--
+            }
+            if (x<10){
+            zeros = "000";
+            }else if(x<100){
+            zeros = "00"
+            }else{
+            zeros = "0"
+            }
+
+            document.getElementById("imgs").src= zeros + x + '.svg';
+            console.log(img.src);
+            return x
+}
+
+function biggerpage(){
+  size = size + 10
+  document.getElementById("imgs").style.height = size+"%";
+}
+function smallerpage(){
+  size = size - 10
+  document.getElementById("imgs").style.height = size + "%";
+}
+
+
+function search(){
+        if(event.key === 'Enter') {;
+          if(Number(document.getElementById("pagenum").value)<145){
+            x = Number(document.getElementById("pagenum").value) + 6
+            console.log(x);
+          
+            if (x<10){
+            zeros = "000";
+            }else if(x<100){
+            zeros = "00"
+            }else{
+            zeros = "0"
+            }
+            
+            document.getElementById("imgs").src= zeros + x + '.svg';
+            
+          }
+        }
+}
+
+</script>

@@ -1,0 +1,119 @@
+<div id = "body">
+
+<button  onclick="backpage()" class="buttons">
+go back a page
+</button>
+
+<button onclick="newpage()" class="buttons">
+new page
+</button>
+
+<button onclick="smallerpage()" class="buttons">
+make page smaller
+</button>
+
+<button onclick="biggerpage()" class="buttons">
+make page bigger
+</button>
+
+<input type="text" id="pagenum" name="name" maxlength="3" size="10" placeholder="go to page" onkeydown="search()"/>
+
+
+<button  type="submit" onclick="window.open('https://drive.google.com/drive/folders/1UyOCDvVWYDDGljjliFm0bQdeyMSRXSoG?usp=sharing')" style="right: 0px; position: absolute;" >Download all SVG pages</button>
+
+
+<img src = "page0004_3.png" id = "imgs2" >
+<img src = "0004.svg" id = "imgs" >
+</div>
+
+<style>
+
+#imgs{
+  position: absolute;
+  height:100%;
+  top: 10px;
+
+}
+#imgs2{
+  position: absolute;
+  height:100%;
+  top: 10px;
+
+}
+</style>
+
+<script>
+var x = 4;
+var y = 4;
+var maxpages = 113;
+var size = 100;
+var offset = 6;
+ function newpage() {
+            if(x<maxpages){
+            x++
+            y++
+            }
+            if (x<10){
+            zeros = "000";
+            }else if(x<100){
+            zeros = "00"
+            }else{
+            zeros = "0"
+            }
+            document.getElementById("imgs2").src= 'page' + zeros + y + '_3.png';
+            
+            document.getElementById("imgs").src= zeros + x + '.svg';
+            
+            console.log(img.src);
+            return x
+}
+ function backpage() {
+            if(x>4){
+            x--
+            y--
+            }
+            if (x<10){
+            zeros = "000";
+            }else if(x<100){
+            zeros = "00"
+            }else{
+            zeros = "0"
+            }
+            document.getElementById("imgs2").src= 'page' + zeros + y + '_3.png';
+            document.getElementById("imgs").src= zeros + x + '.svg';
+
+            return x
+}
+
+function biggerpage(){
+  size = size + 10
+  document.getElementById("imgs").style.height = size+"%";
+    document.getElementById("imgs2").style.height = size+"%";
+}
+function smallerpage(){
+  size = size - 10
+  document.getElementById("imgs").style.height = size + "%";
+  document.getElementById("imgs2").style.height = size + "%";
+}
+
+
+function search(){
+        if(event.key === 'Enter') {;
+          if((Number(document.getElementById("pagenum").value)+offset)<=maxpages){
+            x = Number(document.getElementById("pagenum").value) + offset
+             y = Number(document.getElementById("pagenum").value) + offset
+          
+            if (x<10){
+            zeros = "000";
+            }else if(x<100){
+            zeros = "00"
+            }else{
+            zeros = "0"
+            }
+            document.getElementById("imgs2").src= 'page' + zeros + y + '_3.png';
+            document.getElementById("imgs").src= zeros + x + '.svg';
+            
+          }
+        }
+}
+</script>
