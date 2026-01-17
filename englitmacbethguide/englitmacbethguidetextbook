@@ -19,7 +19,7 @@ make page bigger
 <input type="text" id="pagenum" name="name" maxlength="3" size="10" placeholder="go to page" onkeydown="search()"/>
 
 
-<button  type="submit" onclick="window.open('https://drive.google.com/file/d/1PZxKUjgqnTYeKYF583ronAwDAKB95pP6/view?usp=sharing')" style="right: 0px; position: absolute;" >Download all SVG pages</button>
+<button  type="submit" onclick="window.open('https://drive.google.com/file/d/1KmZ10YTZ1fY9yXlvSf8mIAZRiIzfpTnZ/view?usp=sharing')" style="right: 0px; position: absolute;" >Download all SVG pages</button>
 
 <img src = "0004.svg" id = "imgs" >
 </div>
